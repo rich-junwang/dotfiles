@@ -178,3 +178,5 @@ export PATH=~/anaconda3/bin:$PATH
 
 xclip="xclip -selection c"
 alias pip3=/Users/juwanga/anaconda3/bin/pip3
+alias copy='xclip -selection clipboard'
+alias paste='xclip -selection clipboard -o'
