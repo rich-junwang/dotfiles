@@ -154,7 +154,7 @@ bindkey "^[[4~" end-of-line
 
 
 function watch_and_sync_to {
-        fswatch -o . | xargs -n1 -I{} rsync -azP *(D)  $1
+        fswatch -o . | xargs -n1 -I{} rsync --exclude '*cache_exp*' -azP *(D)  $1
 }
 
 #function aws_watch_and_sync_to {
