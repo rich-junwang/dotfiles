@@ -100,27 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # ZPlug configuration
 
-if [[ ! -f $HOME/.zplug/init.zsh ]] {
-	echo "ZPLUG not installed!!!"
-}
-source ~/.zplug/init.zsh
 
-OMZPLUGIN=("git" "python" "vi-mode")
-OMZCUSPLUGIN=("zsh-syntax-highlighting" "zsh-autosuggestions" "zsh-history-substring-search" "zsh-completions")
-
-for plug in "${OMZPLUGIN[@]}"
-do
-    zplug "$ZSH/plugins/$plug/$plug.plugin.zsh" , from:local
-done
-for plug in "${OMZCUSPLUGIN[@]}"
-do
-    zplug "$ZSH/custom/plugins/$plug/$plug.plugin.zsh" , from:local
-done
-if ! zplug check --verbose; then
-    echo 'Run "zplug install" to install'
-fi
-# Then, source plugins and add commands to $PATH
-zplug load
 
 if [ -f ~/.zshrc_local ]; then
 	source ~/.zshrc_local
@@ -131,16 +111,7 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
-AUTOJUMP="$ZSH/custom/plugins/autojump"
-if [[ ! -d ~/.autojump ]] {
-	echo "autojump not installed!!!"
-}
 
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
-if [[ ! -d $HOME/.fzf ]] {
-	echo "fzf not installed!!!"
-}
 
 # export CLICOLOR=1
 # export TERM=xterm-256color
@@ -177,6 +148,22 @@ hb_watch_and_sync_to () {
 export PATH=~/anaconda3/bin:$PATH
 
 xclip="xclip -selection c"
-alias pip3=/Users/juwanga/anaconda3/bin/pip3
+#alias pip3=/Users/juwanga/anaconda3/bin/pip3
+alias pip=pip3
 alias copy='xclip -selection clipboard'
 alias paste='xclip -selection clipboard -o'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias python=/usr/bin/python3
+
+
+# adapted from https://github.com/kshenoy/dotfiles/blob/master/tmux/tmuxw.bash
+tmux_send_keys_all_panes() {
+    for _pane in $(tmux list-panes -F '#P'); do
+        tmux send-keys -t ${_pane} "$@"
+    done
+}
+
