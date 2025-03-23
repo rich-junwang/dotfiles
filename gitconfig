@@ -1,3 +1,23 @@
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = blue bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[color]
+	ui = true
+
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -31,3 +51,11 @@
 	excludesfile = ~/.gitignore_global
 [pager]
     branch = false
+[push]
+	default = current
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
