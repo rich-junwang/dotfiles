@@ -1,6 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 source ~/.bash_profile
+
+HISTFILE=~/.zsh_history
+SAVEHIST=200000
+HISTSIZE=200000
+setopt SHARE_HISTORY
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -73,6 +79,14 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+
+# color support
+autoload -U colors && colors
+
+## Completions
+autoload -U compinit
+compinit -C
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -139,11 +153,6 @@ function aws_watch_and_sync_to {
 
 alias pdn='ssh -A ec2-user@ec2-3-219-35-24.compute-1.amazonaws.com'
 export pdn='ec2-user@ec2-3-219-35-24.compute-1.amazonaws.com'
-
-
-hb_watch_and_sync_to () {
-    fswatch -o $1  | xargs -n1 -I{} ~/HBDoryUtils/bin/hb.py rsync $1 $2 --rsync-args "-azP --delete"
-}
 
 export PATH=~/anaconda3/bin:$PATH
 
