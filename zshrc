@@ -138,19 +138,6 @@ bindkey "^[[4~" end-of-line
 # source "$ZSH/custom/plugins/zsh-git-prompt/zshrc.sh"
 
 
-function watch_and_sync_to {
-        fswatch -o . | xargs -n1 -I{} rsync --exclude '*cache_exp*' -azP *(D)  $1
-}
-
-#function aws_watch_and_sync_to {
-#  fswatch -o . | xargs -n1 -I{} rsync -azP --delete *(D) $1
-#}
-
-function aws_watch_and_sync_to {
-  fswatch -o . | xargs -n1 -I{} rsync -azP -e "proxycommand ssh -W %h:%p 18.234.246.23" *(D) $1
-}
-
-
 alias pdn='ssh -A ec2-user@ec2-3-219-35-24.compute-1.amazonaws.com'
 export pdn='ec2-user@ec2-3-219-35-24.compute-1.amazonaws.com'
 
@@ -168,8 +155,33 @@ export NVM_DIR="$HOME/.nvm"
 
 alias python=/usr/bin/python3
 
+# usage:
+# watch_and_sync_to   my_server_name:/mnt_out/my_folder
+#
+function watch_and_sync_to {
+        fswatch -o . | xargs -n1 -I{} rsync --exclude '*cache_exp*' -azP *(D)  $1
+}
+
+#function aws_watch_and_sync_to {
+#  fswatch -o . | xargs -n1 -I{} rsync -azP --delete *(D) $1
+#}
+
+function aws_watch_and_sync_to {
+  fswatch -o . | xargs -n1 -I{} rsync -azP -e "proxycommand ssh -W %h:%p 18.234.246.23" *(D) $1
+}
+
+
+# to use the following function, have to put krsync under PATH
+# usage:
+# krsync_watch_and_sync_to   my_pod_name:/mnt_out/my_folder
+function krsync_watch_and_sync_to {
+  fswatch -o . | xargs -n1 -I{} krsync -av --progress --stats *(D) $1
+}
 
 # adapted from https://github.com/kshenoy/dotfiles/blob/master/tmux/tmuxw.bash
+# usage:
+#  tmux_send_keys_all_panes 'export $(ada credentials print --account my_aws_account --role=Admin --profile codd --format env | xargs -L 1) ' Enter
+#
 tmux_send_keys_all_panes() {
     for _pane in $(tmux list-panes -F '#P'); do
         tmux send-keys -t ${_pane} "$@"
