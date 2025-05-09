@@ -26,8 +26,7 @@ ZSH_THEME="robbyrussell"
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Case-sensitive completion must be off. _ and - will be interchangeable.  # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -188,3 +187,4 @@ tmux_send_keys_all_panes() {
     done
 }
 
+export PATH=`python3 -m site --user-base`/bin:$PATH
