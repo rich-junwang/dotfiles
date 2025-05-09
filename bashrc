@@ -19,6 +19,12 @@ shopt -s histappend
 #HISTSIZE=1000
 HISTFILESIZE=200000
 
+
+# https://askubuntu.com/questions/67283/is-it-possible-to-make-writing-to-bash-history-immediate
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -n"
+
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
