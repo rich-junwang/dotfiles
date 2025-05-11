@@ -152,7 +152,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias python=/usr/bin/python3
+#alias python=/usr/bin/python3
+alias python=$HOME/.local/bin/python3.12
 
 # usage:
 # watch_and_sync_to   my_server_name:/mnt_out/my_folder
@@ -187,4 +188,5 @@ tmux_send_keys_all_panes() {
     done
 }
 
-export PATH=`python3 -m site --user-base`/bin:$PATH
+export PATH=`python3 -m site --user-base`/bin::$PATH
+export PATH=~/.local/bin:$PATH
