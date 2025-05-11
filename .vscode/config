@@ -1,0 +1,56 @@
+// Extensions to install:
+//  - Python (Microsoft)
+//  - Jupyter (Microsfot)
+//  - Ruff (Astral Software)
+//
+// .vscode/settings.json
+{
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    // "notebook.source.fixAll": "explicit",
+    // "notebook.source.organizeImports": "explicit"
+  },
+  "notebook.output.wordWrap": true,
+  "notebook.output.textLineLimit": 200,
+  "jupyter.debugJustMyCode": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests"],
+  "files.exclude": {
+    "**/*.egg-info": true,
+    "**/htmlcov": true,
+    "**/~$*": true,
+    "**/.coverage.*": true,
+    "**/.venv": true,
+    "**/__pycache__": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+  }
+}
+
+// .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Debug Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "purpose": ["debug-test"],
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": { "PYTEST_ADDOPTS": "--no-cov" }
+    }
+  ]
+}
