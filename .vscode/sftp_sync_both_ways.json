@@ -9,12 +9,20 @@
     "openSsh": false,
     "context": "my_local_folder_path_I_want_to_sync",
     "privateKeyPath": "/Users/junwang/.ssh/id_rsa",
-    "uploadOnSave": true,
+    "uploadOnSave": false,
     "useTempFile": false,
     "ignore": [
       "**/.vscode/**",
       "**/.git/**",
       "**/.DS_Store"
-    ]
+    ],
+    "watcher": {
+        "files": "**/*",
+        "autoUpload": true,
+        "autoDelete": true
+    },
+    "syncOption": {
+        "delete": true
+    }
 }
 
