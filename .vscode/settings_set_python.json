@@ -1,0 +1,5 @@
+{
+  "code-runner.executorMap": {
+      "python": "/usr/local/bin/python3.12"
+  }
+}
