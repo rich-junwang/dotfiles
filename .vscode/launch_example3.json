@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+        "name": "Python: Current File",
+        "type": "python",
+        "request": "launch",
+        "program": "/usr/local/src/mypkg/scripts/decoder-training/pretrain_main_apex.py",
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "env": {
+            "REAL_WORLD_SIZE": "8",
+            //"_WORLD_SIZE": "1",
+            "NUM_NODES": "1",
+            "NCCL_ALGO": "Ring",
+            "RUN_LOG_DIR": "/mnt_out/xx/logs",
+            "DEFAULT_ROOT_DIR": "/mnt_out/xx/logs",
+            "RUN_NAME": "xx-debug-nlhf",
+            "CUDA_LAUNCH_BLOCKING": "0",
+            "LD_LIBRARY_PATH": "/xx/lib:$LD_LIBRARY_PATH",
+            "PYDEVD_WARN_EVALUATION_TIMEOUT": "600",
+            "mypkg_PATH": "/usr/local/src/mypkg",
+            "PYTHONPATH": "/usr/local/src/mypkg",
+            "NCCL_DEBUG": "WARN",
+            "NCCL_PROTO": "Simple",
+            "CUDA_DEVICE_MAX_CONNECTIONS": "1",
+            "HYDRA_FULL_ERROR": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "RL_DEBUG": "1",
+            "MEM_REPORT_PATH": "/mnt_out/xx/mypkg_logs/prof_without_save.log",
+            "TORCH_DISTRIBUTED_DEBUG": "DETAIL",
+            "TORCH_SHOW_CPP_STACKTRACES": "1",
+            "PYTHONUNBUFFERED": "1",
+            "LKK_SAVE": "true"
+        },
+        "args": [
+            "--config-path=/mnt_out/xx/mypkg/build/new_models/nemo_configs",
+            "--config-name=base_26B_llama_prod.yaml",
+            "use_elastic=false",
+            "data_module_type=base",
+            "validate_only=False",  // add for debug
+            "timeout=2400",
+            "refresh_rate=5",
+            "data.training_dataset=/mnt/pretraining-data/val.arrow"
+        ]
+        }
+    ]
+}
