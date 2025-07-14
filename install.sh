@@ -2,8 +2,30 @@
 ########################
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 
-sudo apt -y install git
-sudo apt -y install curl
+OS="$(uname)"
+
+if [ "$OS" = "Linux" ]; then
+    # Assuming Ubuntu/Debian
+    if command -v apt &> /dev/null; then
+        sudo apt update
+        sudo apt -y install git curl
+    else
+        echo "apt not found. This script supports only Ubuntu/Debian-based Linux distributions."
+        exit 1
+    fi
+elif [ "$OS" = "Darwin" ]; then
+    # macOS
+    if ! command -v brew &> /dev/null; then
+        echo "Homebrew not found. Installing Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    brew update
+    brew install git curl
+else
+    echo "Unsupported OS: $OS"
+    exit 1
+fi
+
 
 ########## Variables
 
