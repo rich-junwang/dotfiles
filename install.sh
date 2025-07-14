@@ -2,6 +2,9 @@
 ########################
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 
+sudo apt -y install git
+sudo apt -y install curl
+
 ########## Variables
 
 # install all the submodules
