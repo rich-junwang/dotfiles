@@ -1,3 +1,4 @@
+//https://github.com/antfu/vscode-settings/blob/main/.vscode/settings.json
 {
   "editor.cursorSmoothCaretAnimation": "on",
   // "editor.fontFamily": "Input Mono, monospace",
