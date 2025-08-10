@@ -2,7 +2,7 @@
 {
   "editor.cursorSmoothCaretAnimation": "on",
   // "editor.fontFamily": "Input Mono, monospace",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "editor.fontFamily": "Monaco, 'Courier New', monospace",
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
@@ -94,7 +94,8 @@
         "vscode-kubernetes.helm-path.mac": "/Users/juwanga/.vs-kubernetes/tools/helm/darwin-amd64/helm"
     },
     "redhat.telemetry.enabled": false,
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.scrollback": 20000,
     "editor.minimap.enabled": false,
     "python.terminal.activateEnvironment": false,
     "workbench.editor.enablePreview": false,
