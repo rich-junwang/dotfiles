@@ -82,10 +82,10 @@
         "when": "searchViewletVisible"
     },
     {
-        "key":  "alt+q",
+        "key": "alt+q",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
-            "text" : "echo file = '${file}' : workspaceFolder = '${workspaceFolder}'\u000D"
+            "text": "echo file = '${file}' : workspaceFolder = '${workspaceFolder}'\u000D"
         }
     },
     {
@@ -107,7 +107,12 @@
     {
         "key": "cmd+v",
         "command": "editor.action.clipboardPasteAction",
-        "when": "!editorTextFocus"
+        "when": "!editorTextFocus && !terminalFocus"
+    },
+    {
+        "key": "cmd+v",
+        "command": "workbench.action.terminal.paste",
+        "when": "terminalFocus"
     },
     {
         "key": "cmd+shift+v",
