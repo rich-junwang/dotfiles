@@ -57,7 +57,8 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 5,
+  // how many tabs we can have
+  "workbench.editor.limit.value": 15, 
   "search.exclude": {
     "**/*.snap": true,
     "**/*.svg": true,
