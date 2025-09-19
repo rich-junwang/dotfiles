@@ -90,6 +90,17 @@
     "git.timeline.showAuthor": false,
     "gitlens.currentLine.enabled": false,
     "gitlens.currentLine.pullRequests.enabled": false,
+  // "gitlens.currentLine.format": "${date, } ${author}",
+    "gitlens.currentLine.dateFormat": "YYYY-MM-DD",
+    "gitlens.blame.format": "${date|8-} ${author|8-}",
+    "gitlens.blame.dateFormat": "MM/DD/YY",
+    "gitlens.blame.fontSize": 12,
+    // "gitlens.blame.format": "${message|20?} ${agoOrDate|14-}",
+    "gitlens.blame.avatars": false,
+    "gitlens.hovers.avatars": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
     "vs-kubernetes": {
         "vscode-kubernetes.minikube-path.mac": "/Users/juwanga/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
         "vscode-kubernetes.helm-path.mac": "/Users/juwanga/.vs-kubernetes/tools/helm/darwin-amd64/helm"
@@ -108,9 +119,6 @@
     //失去焦点后自动保存
     "files.autoSave": "onFocusChange",
     "terminal.integrated.inheritEnv": false,
-    "gitlens.blame.avatars": false,
-    "gitlens.blame.format": "${message|20?} ${agoOrDate|14-}",
-    "gitlens.hovers.avatars": false,
     "json.format.enable": true,
     "files.associations": {
         "*.jsonl": "json"
@@ -213,9 +221,6 @@
   "css.lint.hexColorLength": "ignore",
   "githubIssues.workingIssueFormatScm": "#${issueNumberLabel}",
   "githubPullRequests.fileListLayout": "tree",
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.menus": {
     "editor": {
       "blame": false,
