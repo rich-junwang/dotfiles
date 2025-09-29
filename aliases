@@ -41,3 +41,7 @@ alias dkcpup="docker-compose up -d"
 alias dkcpdown="docker-compose down"
 alias dkcpstart="docker-compose start"
 alias dkcpstop="docker-compose stop"
+
+
+# uv
+alias shared='source ~/.uv/shared/bin/activate' 
