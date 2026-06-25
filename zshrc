@@ -137,8 +137,9 @@ bindkey "^[[4~" end-of-line
 # source "$ZSH/custom/plugins/zsh-git-prompt/zshrc.sh"
 
 
-alias pdn='ssh -A ec2-user@ec2-3-219-35-24.compute-1.amazonaws.com'
-export pdn='ec2-user@ec2-3-219-35-24.compute-1.amazonaws.com'
+#alias pdn='ssh -A ec2-user@ec2-3-219-35-24.compute-1.amazonaws.com'
+#export pdn='ec2-user@ec2-3-219-35-24.compute-1.amazonaws.com'
+
 
 export PATH=~/anaconda3/bin:$PATH
 
@@ -156,7 +157,7 @@ export NVM_DIR="$HOME/.nvm"
 alias python=$HOME/.local/bin/python3.12
 
 # usage:
-# watch_and_sync_to   my_server_name:/mnt_out/my_folder
+# watch_and_sync_to   $my_server_name:/mnt_out/my_folder
 #
 function watch_and_sync_to {
         fswatch -o . | xargs -n1 -I{} rsync --exclude '*cache_exp*' -azP *(D)  $1

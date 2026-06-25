@@ -1,0 +1,62 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        },
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/headers/cuda13/",
+                "${workspaceFolder}/headers/cuda13/cccl/",
+                "${workspaceFolder}/headers/openmpi/",
+                "${workspaceFolder}/headers/nvshmem13/",
+                "${workspaceFolder}/headers/nccl/",
+                "/Users/junwang/workspaces/cuda_vscode/headers/cuda13/",
+                "/Users/junwang/workspaces/cuda_vscode/headers/cuda13/cccl/",
+                "/Users/junwang/workspaces/cuda_vscode/headers/openmpi/",
+                "/Users/junwang/workspaces/cuda_vscode/headers/nvshmem13/",
+                "/Users/junwang/workspaces/cuda_vscode/headers/nccl/"
+            ],
+            "defines": ["__CUDACC__", "__NVCC__", "CUDA=1"],
+            "forcedInclude": [
+                "${workspaceFolder}/headers/cuda13/cuda_runtime.h"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/lib/x86_64-linux-gnu/openmpi/include",
+                "/usr/local/cuda/include",
+                "/usr/local/cuda-*/include",
+                "/opt/nvshmem/include",
+                "/usr/include/nvshmem_*/"
+            ],
+            "defines": ["__CUDACC__", "__NVCC__", "CUDA=1"],
+            "forcedInclude": ["/usr/local/cuda/include/cuda_runtime.h"],
+            "compilerPath": "/usr/local/cuda/bin/nvcc",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
