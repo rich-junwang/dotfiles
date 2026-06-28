@@ -342,4 +342,5 @@
   "cmake.configureOnEdit": false,
   "cmake.buildBeforeRun": false,
   "docker.extension.enableComposeLanguageServer": false,
+  "editor.inlayHints.enabled": "off"
 }
