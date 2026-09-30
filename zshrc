@@ -191,6 +191,10 @@ tmux_send_keys_all_panes() {
 
 export PATH=`python3 -m site --user-base`/bin::$PATH
 export PATH=~/.local/bin:$PATH
+
+# alias python3=$HOME/.local/bin/python3.12
+# alias python=python3
+
 alias python3=/Users/junwang/.uv/shared/bin/python3
 alias python=python3
 
